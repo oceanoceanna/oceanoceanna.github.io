@@ -1,1 +1,118 @@
-Hello World
+---
+layout: default
+title: Chen-Lu Ding
+---
+
+<div class="head">
+    <img style="float:left;padding-right: 20px;border-radius: 80px" src="assets\image\myself.jpg" width="200" id="myself"/>
+    <div style="float:left;">
+        <h2 style="padding: 0px;margin: 0px">Chen-Lu Ding (丁陈璐)</h2>
+        <div style="  font-size: 16px;padding: 0px;margin: 0px;">
+            <p>M.S. Student, <a href="http://data-science.ustc.edu.cn/main.htm" target="_blank">Lab for Data Science</a></p>
+            <p>Data Science, <a href="http://sds.ustc.edu.cn/main.htm" target="_blank">School of Data Science</a></p>
+            <p><a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></p>
+            <br>
+            <p>Email: dingchenlu200103@gmail.com</p>
+            <p>
+                <a href="https://github.com/oceanoceanna" target="_blank"><img id="github" src="assets\image\github.png" width="30"/></a>
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=Li7oZpsAAAAJ" target="_blank"><img id="google" src="assets\image\google.png" width="30"/></a>
+            </p>
+        </div>
+    </div>
+    <div style="float:right;" class="remove_photo">
+<!--        <img src="assets\image\isee.jpg" width="100" style="display:block;padding-left: 50px"/>-->
+<!--        <img src="assets\image\sysu.jpg" width="200" style="display:block;"/>-->
+    </div>
+</div>
+
+
+<div style="clear: both">
+    <hr>
+    <h2 style="color: brown;">Biography</h2>
+    <p>
+        I am currently a undergraduate student at <a href="https://www.sdu.edu.cn/" target="_blank">ShanDong University</a>.
+        I will be studying for a master's degree at <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a> under the guidance of Professor <a href="https://hexiangnan.github.io/" target="_blank">Xiangnan He</a> and Professor <a href="https://xiangwang1223.github.io/" target="_blank">Xiang Wang</a>
+        My research interests are recommendation systems and machine unlearning.
+        <br><br>
+        During my undergraduate study in <a href="https://www.sdu.edu.cn/" target="_blank">Shandong University</a>,
+        I worked with Assistant Professor <a href="https://faculty.sdu.edu.cn/luoxin/zh_CN/index.htm" target="_blank">Xin Luo</a> and
+        Professor <a href="https://faculty.sdu.edu.cn/xuxinshun/zh_CN/index.htm" target="_blank">Xin-Shun Xu</a>, mainly worked on hashing retrieval.
+    </p>
+</div>
+
+
+<div>
+    <h2 style="color: brown;">Education</h2>
+    <ul style="padding-left: 0px; margin-left: 0px;">
+        {% for school in site.data.education %}
+        <li class="education">
+            <div>
+                {{school.degree}} in {{school.major}}
+            </div>
+            <div>
+                {{school.year}}
+            </div>
+            <div class="school">
+                {{school.school}}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<div>
+    <h2 style="color: brown;">Research Interest</h2>
+    <ul>
+        <li>Machine Unlearning</li>
+        <li>Recommendation System</li>
+    </ul>
+</div>
+
+<div>
+    <h2 style="color: brown;">Publication</h2>
+    <ul>
+        {% for paper in site.data.publish %}
+        <li class="publish">
+            <div>
+                <span style='font-weight: bold;'>{{paper.title}}</span>
+                {% if paper.pdf %} <a href={{paper.pdf}} target="_blank">[Paper]</a> {% endif %}
+                {% if paper.code %} <a href={{paper.code}} target="_blank">[Code]</a> {% endif %}
+                {% if paper.page %} <a href={{paper.page}} target="_blank">[Page]</a> {% endif %}
+                {% if paper.video %} <a href={{paper.video}} target="_blank">[Video]</a> {% endif %}
+            </div>
+            <div>{{paper.author | replace: "Chen-Lu Ding", "<span style='font-weight: bold;'>Chen-Lu Ding</span>" }}</div>
+            <div>In: {{paper.in}}, {{paper.year}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!--<div>-->
+<!--    <h2 style="color: brown;">Manuscript</h2>-->
+<!--    <ul>-->
+<!--        {% for paper in site.data.manuscript %}-->
+<!--        <li>-->
+<!--            <div><span style='text-decoration: underline;font-weight: bold;'>{{paper.title}}</span> <a href={{paper.pdf}} target="_blank">[PDF]</a></div>-->
+<!--            <div>{{paper.author | replace: "Xiao-Ming Wu", "<span style='text-decoration: underline;font-weight: bold;'>Xiao-Ming Wu</span>" }}</div>-->
+<!--            <div>In: {{paper.in}}, {{paper.year}}</div>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--</div>-->
+
+<div>
+    <h2 style="color: brown;">Award</h2>
+    <ul>
+        {% for award in site.data.award %}
+        <li>
+            <div>{{award.name}}, {{award.year}}.</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!--<div>-->
+<!--    <h2 style="color: brown;">Service</h2>-->
+<!--    <p>None</p>-->
+<!--</div>-->
